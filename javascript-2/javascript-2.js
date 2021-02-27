@@ -36,7 +36,9 @@ let foods = [
 */
 
 //CODE HERE
-
+foods.forEach(function(element, index, array) {
+  console.log(element,array)
+})
 //////////////////////////////////PROBLEMS 2-4//////////////////////////////////
 /*
   For problems 2-4, you will be working with the products array below.
@@ -75,23 +77,32 @@ const products = [
 
 ////////////////////PROBLEM 2////////////////////
 /*
-  You've decided to have a sale on everything you have in stock. It's all going to be 25% off. 
-  Using the map method, make a copy of your products array with the prices reduced by 25%. 
+  You've decided to have a sale on everything you have in stock. 
+  It's all going to be 25% off. Using the map method, make a 
+  copy of your products array with the prices reduced by 25%. 
   Save the copy to a new variable called 'saleProducts'.
 */
 
 //CODE HERE
-
+let saleProducts = products.map(function(element, index, array){
+ element.price = element.price - (element.price * .25);
+});
 ////////////////////PROBLEM 3////////////////////
 /*
-  A customer has placed an order - they want one of every product that has blue on it. 
-  Using the filter method on saleProducts, return the products that have blue in their color array 
+  A customer has placed an order - 
+  they want one of every product that has blue on it. 
+  Using the filter method on saleProducts,
+   return the products that have blue in their color array 
   to a new variable called 'blueProducts'. 
   (Hint: look up the array method 'includes' on MDN)
 */
 
 //CODE HERE
-
+let blueProducts = products.filter(function(element, index, array){
+  if (element.color['blue'] === true){
+    return element;
+  }
+});
 ////////////////////PROBLEM 4////////////////////
 /*
   Now you'd like to get them their order total. 
@@ -251,7 +262,17 @@ const userInfo = {
 */
 
 //CODE HERE
-
+let person = {
+  name: 'string'
+  age: number
+  jobs: ['', '', '']
+  birthday: function() {return this.age + 1}
+  favorites: an object that has the following properties
+  color: string
+  number: number
+  book: string
+  kids: [{name: , age: }, {name: , age: }],
+}
 //////////////////////////////////PROBLEMS 13-14//////////////////////////////////
 /*
   For the last two problems, you will be determining the 
@@ -276,7 +297,7 @@ const workout = {
 //let context1 = myFunc
 //let context1 = window
 //let context1 = global
-// let context1 = workout
+let context1 = workout
 
 ////////////////////PROBLEM 14////////////////////
 /*
@@ -289,6 +310,6 @@ function myFunc() {
 }
 
 //let context2 = myFunc
-// let context2 = window
+let context2 = window
 //let context2 = global
 //let context2 = workout
